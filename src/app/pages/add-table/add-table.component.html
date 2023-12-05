@@ -1,0 +1,47 @@
+<div class="add-employee">
+    <div class="heading-container">
+        <h2 class="heading-font">Add Table</h2>
+    </div>
+
+    <div class="form-background">
+        <form class="form-design">
+            <div class="row ">
+                <div class="col-sm-12 col-lg-8  d-flex" style="flex-direction: column; justify-content: space-evenly;">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="tablenumber" name="tablenumber" placeholder=""
+                            [(ngModel)]="table.tableNumber" required="">
+                        <label for="tablenumber">Table Number</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="seats" name="seats" placeholder=""
+                            [(ngModel)]="table.numberOfSeats" required="">
+                        <label for="seats">Number of Seats</label>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-12 col-lg-4 ">
+                    <div class="image-container">
+
+                        <label for="image"
+                            style="display: block; border: 2px dashed lightgray; height: 220px; padding: 10px;">
+                            <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+                                <div>
+                                    <img style="width: 150px; height: 150px; margin-top: 10px; " [src]="imageUl" alt="">
+                                </div>
+                            </div>
+                        </label>
+                        <input type="file" class="form-control d-none" id="image" placeholder="" name="img"
+                            (change)="onFileSelected($event)" accept="image/*" [(ngModel)]="table.iamge">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="submit-employee " style="margin-top: 15px;" (click)="onAddTable(table)">
+                    <p class="par">Submit</p>
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

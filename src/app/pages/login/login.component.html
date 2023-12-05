@@ -1,0 +1,33 @@
+<div *ngIf="isLoading" class="center-spinner"> <app-loading-spinner></app-loading-spinner> </div>
+<div class="center " *ngIf="!isLoading">
+    <div class="row align-items-center wh">
+
+        <div class="col login-img">
+            <img src="../../../assets/foodrotate.png" class="h480 w480 animate-spinSlow">
+        </div>
+
+        <div class="col">
+            <div class="login-wrapper ">
+                <div class="login-container">
+                    <img src="../../../assets/chef.png" class="chef-img">
+                    <p class="logo-text">BSS RESTAURANT</p>
+                    <form class="login-form">
+                        <div class="mb-3">
+                            <p class="inputlabel">Username: </p>
+                            <input type="text" id="username" placeholder="Username" name="username" class="input-field"
+                                [(ngModel)]="user.username">
+                        </div>
+                        <div class="mb-3">
+                            <p class="inputlabel">Password:</p>
+                            <input type="password" id="password" placeholder="Password" name="password"
+                                class="input-field" [(ngModel)]="user.password">
+                        </div>
+                        <button type="submit" class="submitbtn mt-3 mb-3" (click)="onLogin(user)">Log in</button>
+                        <p class="link">Back To Home</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

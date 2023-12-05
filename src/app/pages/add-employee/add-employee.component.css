@@ -1,0 +1,68 @@
+.add-employee {
+  padding: 3rem 3rem 1rem 3rem;
+}
+.heading-font {
+  font-family: "Quattrocento", serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: primary;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #cc080b;
+  width: 100%;
+}
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.form-background {
+  margin-top: 2rem;
+  --tw-shadow-color: #000000;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  box-shadow: 0 3px 5px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
+    0 5px 8px 0 var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
+    0 1px 14px 0 var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12)) !important;
+}
+.form-design {
+  padding: 2rem;
+  flex-direction: column;
+  display: flex;
+}
+.image-container {
+  width: 100%;
+  padding: 0px 12px 0px 12px;
+}
+
+.submit-employee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #cc080b;
+  border: 2px solid #cc080b;
+  border-radius: 10px;
+  padding: 8px 0;
+  background-color: #fff;
+  font-size: 18px;
+}
+.par {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.submit-employee:hover {
+  color: #fff;
+  background-color: #cc080b;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

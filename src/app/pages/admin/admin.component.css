@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quattrocento&display=swap");
+.heading-font {
+  font-family: "Quattrocento", serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: primary;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #cc080b;
+}
+.admin {
+  padding: 4rem;
+}

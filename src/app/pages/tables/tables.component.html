@@ -1,0 +1,55 @@
+<div class="employee">
+    <div class="heading-container">
+        <h2 class="heading-font">Tables</h2>
+        <button class="button-5" role="button" (click)="onAddTable()">ADD TABLE</button>
+    </div>
+
+    <div class="heading-data">
+        <div style="overflow-x: auto;">
+            <table class="w-full text-sm text-left">
+                <thead class="text-primary border-b">
+                    <tr>
+                        <th class="p-3 header-color"> Image </th>
+                        <th class="p-3 header-color"> Table Number </th>
+                        <th class="p-3 header-color"> Total Seats </th>
+                        <th class="p-3 header-color"> Availability </th>
+                        <th class="p-3 header-color"> Employees </th>
+                        <th class="p-3 header-color"> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-data-border" *ngFor="let table of  tables">
+                        <td class="p-3"><img src="{{table.image}}"
+                                style="height: 40px; width: 40px; border-radius: 50%;"></td>
+                        <td class="p-3">{{table.tableNumber}}</td>
+                        <td class="p-3">{{table.numberOfSeats}}</td>
+                        <td class="p-3"><span class="material-symbols-outlined edit">
+                                check_circle
+                            </span></td>
+                        <td class="p-3"></td>
+                        <td class="p-3">
+                            <div class="d-flex">
+                                <div class="m-1"></div>
+                                <span class="material-symbols-outlined pl-3 delete" (click)="onDeleteTable(table.id)">
+                                    delete_forever
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-footer">
+            <div style="margin-right: 4px;">
+                <label for="page">Items per Page:</label>
+                <select id="page" class="border bottom-1 ng-untouched ng-pristine ng-valid">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <div>1-{{tables.length}} of {{tables.length}} </div>
+        </div>
+    </div>
+
+</div>

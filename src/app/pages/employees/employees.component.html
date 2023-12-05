@@ -1,0 +1,67 @@
+<div class="employee">
+    <div class="heading-container">
+        <h2 class="heading-font">Employees</h2>
+        <button class="button-5" role="button" (click)="onAddEmployee()">ADD EMPLOYEE</button>
+    </div>
+
+    <div class="heading-data">
+        <div style="overflow-x: auto;">
+            <table class="w-full text-sm text-left">
+                <thead class="text-primary border-b">
+                    <tr>
+                        <th class="p-3 header-color"> Image </th>
+                        <th class="p-3 header-color"> Name </th>
+                        <th class="p-3 header-color"> Email </th>
+                        <th class="p-3 header-color"> Phone </th>
+                        <th class="p-3 header-color"> Joining Date </th>
+                        <th class="p-3 header-color"> Designation </th>
+                        <th class="p-3 header-color"> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-data-border" *ngFor="let employee of employees">
+                        <td class="p-3"><img src="{{employee.image}}"
+                                style="height: 40px; width: 40px; border-radius: 50%;"></td>
+                        <td class="p-3 inline-grid">
+                            <p style="margin-bottom: 0px; margin-top: 4px; min-width: 50px;     min-width: 50px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;"> {{employee.fullName}}</p>
+                            <span class="material-symbols-outlined">
+                                star
+                            </span>
+                        </td>
+                        <td class="p-3">{{employee.email}}</td>
+                        <td class="p-3">{{employee.phone}}</td>
+                        <td class="p-3">{{employee.joinDate}}</td>
+                        <td class="p-3">{{employee.designation}}</td>
+                        <td class="p-3">
+                            <div class="d-flex">
+                                <span class="material-symbols-outlined edit">
+                                    edit_document
+                                </span>
+                                <div class="m-1"></div>
+                                <span class="material-symbols-outlined pl-3 delete"
+                                    (click)="onDeleteEmployee(employee.id)">
+                                    delete_forever
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-footer">
+            <div style="margin-right: 4px;">
+                <label for="page">Items per Page:</label>
+                <select id="page" class="border bottom-1 ng-untouched ng-pristine ng-valid">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <div>1-{{employees.length}} of {{employees.length}}</div>
+        </div>
+    </div>
+
+</div>

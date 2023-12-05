@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap");
+
+.center-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.center {
+  text-align: center !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wh {
+  height: 100vh;
+  width: 100%;
+}
+.login-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../assets/foodrotatebg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.25));
+  vertical-align: middle;
+  transform: translateY(-1000px);
+  animation: slideIn 2s ease-in forwards;
+}
+.animate-spinSlow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.w480 {
+  width: 480px;
+}
+.h480 {
+  height: 480px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  display: inline;
+  vertical-align: middle;
+}
+.login-container {
+  width: 540px;
+  background-color: #f1f1f1;
+  padding: 0px;
+  border-radius: 10px;
+  height: 75%;
+  margin: 10px auto;
+  transform: translatex(1000px);
+  animation: slideIn 2s ease-in forwards;
+}
+@keyframes slideIn {
+  to {
+    transform: translatex(0);
+  }
+}
+
+.login-wrapper {
+  padding-left: 20px;
+  padding-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chef-img {
+  margin-top: 20px;
+  border-style: none;
+  background-repeat: no-repeat;
+  width: 110px;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.logo-text {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: #cc080b 2px 0px 0px, #cc080b 1.75517px 0.958851px 0px,
+    #cc080b 1.0806px 1.68294px 0px, #cc080b 0.141474px 1.99499px 0px,
+    #cc080b -0.832294px 1.81859px 0px, #cc080b -1.60229px 1.19694px 0px,
+    #cc080b -1.97998px 0.28224px 0px, #cc080b -1.87291px -0.701566px 0px,
+    #cc080b -1.30729px -1.5136px 0px, #cc080b -0.421592px -1.95506px 0px,
+    #cc080b 0.567324px -1.91785px 0px, #cc080b 1.41734px -1.41108px 0px,
+    #cc080b 1.92034px -0.558831px 0px;
+}
+
+.inputlabel {
+  font-size: 18px;
+  text-align: left;
+}
+.input-field {
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 5px 10px 10px;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+.submitbtn {
+  font-size: 18px;
+  width: 100%;
+  color: #fff;
+  background-color: #cc080b;
+  padding: 15px 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.submitbtn:hover {
+  background-color: #9b0608;
+}
+.link {
+  color: #cc080b;
+  text-decoration: none;
+}
+.login-form {
+  padding: 30px;
+}
+
+@media (max-width: 1250px) {
+  .login-img {
+    display: none;
+  }
+}

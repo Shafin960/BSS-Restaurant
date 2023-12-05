@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quattrocento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0");
+
+.heading-font {
+  font-family: "Quattrocento", serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: primary;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #cc080b;
+  width: 170px;
+}
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.employee {
+  padding: 4rem;
+  height: calc(100vh - 66px);
+}
+
+/* CSS */
+.button-5 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Quattrocento", serif;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  border: 2px solid rgb(204, 8, 11);
+}
+
+.button-5:hover,
+.button-5:focus {
+  background-color: #cc080b;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+  transform: translateY(-1px);
+}
+.th {
+  color: #cc080b;
+}
+.heading-data {
+  --tw-shadow-color: #000000;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  overflow-x: auto;
+  margin-top: 20px;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-left {
+  text-align: left;
+}
+.w-full {
+  width: 100%;
+}
+.table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+.header-color {
+  color: #cc080b;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.row-data-border {
+  border: 1px solid lightgray;
+}
+
+.edit {
+  color: #4caf50;
+}
+.delete {
+  color: #cc080b;
+}
+.edit:hover {
+  color: green;
+  cursor: pointer;
+}
+.delete:hover {
+  color: crimson;
+  cursor: pointer;
+}
+.table-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: end;
+}

@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap");
+.loginbg {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.6),
+      rgb(255, 255, 255)
+    ),
+    url(../assets/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: inherit;
+  background-attachment: fixed;
+}
+body {
+  position: relative;
+}

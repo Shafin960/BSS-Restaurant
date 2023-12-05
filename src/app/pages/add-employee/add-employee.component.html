@@ -1,0 +1,136 @@
+<div class="add-employee">
+    <div class="heading-container">
+        <h2 class="heading-font">Add Employee</h2>
+    </div>
+
+    <div class="form-background">
+        <form class="form-design">
+            <div class="row ">
+                <div class="col-sm-12 col-lg-8 d-flex" style="flex-direction: column; justify-content: space-between;">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstname" placeholder=""
+                            [(ngModel)]="employee.firstName" name="firstname" required="">
+                        <label for="firstname">First Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="middlename" placeholder=""
+                            [(ngModel)]="employee.middleName" name="middlename">
+                        <label for="middlename">Middle Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="lastName" placeholder=""
+                            [(ngModel)]="employee.lastName" name="lastName" required=" ">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="image-container">
+
+                        <label for="image"
+                            style="display: block; border: 2px dashed lightgray; height: 240px; padding: 10px;">
+                            <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+                                <div>
+                                    <img style="width: 150px; height: 170px; margin-top: 15px ;" [src]="imageUl" alt="">
+                                </div>
+                            </div>
+                        </label>
+                        <input type="file" class="form-control d-none" id="image" placeholder="" name="img"
+                            (change)="onFileSelected($event)" accept="image/*">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 ">
+                <div class="col-sm-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="spouseName" placeholder=""
+                            [(ngModel)]="employee.spouseName" name="spouseName">
+                        <label for="spouseName">Spouse Name</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="fatherName" placeholder=""
+                            [(ngModel)]="employee.fatherName" name="fatherName">
+                        <label for="fatherName">Father Name</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="motherName" placeholder=""
+                            [(ngModel)]="employee.motherName" name="motherName">
+                        <label for="motherName">Mother Name</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 ">
+                <div class="col-sm-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="designation" placeholder=""
+                            [(ngModel)]="employee.designantion" name="designation" required="">
+                        <label for="designation">Designation</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="" [(ngModel)]="employee.email"
+                            name="email" required="">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="phoneNumber" placeholder=""
+                            [(ngModel)]="employee.phoneNumber" name="phoneNumber" required="">
+                        <label for="phoneNumber">Phone Number</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 ">
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+
+                        <select class="form-control" id="gender" name="gender" [(ngModel)]="genderId"
+                            (change)="onGenderChange()" required="">
+                            <option value="" selected disabled hidden></option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="gender">Gender</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="dob" placeholder="" [(ngModel)]="employee.dob"
+                            name="dob">
+                        <label for="dob">Date of Birth</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="joindate" placeholder=""
+                            [(ngModel)]="employee.joinDate" name="joindate">
+                        <label for="joindate">Date of Join</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="nid" placeholder="" [(ngModel)]="employee.nid"
+                            name="nid">
+                        <label for="nid">NID</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div style="padding: 0px 12px 0px 12px;">
+                    <button class="submit-employee" (click)="onAddEmployee(employee)">
+                        <p class="par">Submit</p>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

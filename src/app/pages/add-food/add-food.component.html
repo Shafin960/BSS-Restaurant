@@ -1,0 +1,89 @@
+<div class="add-employee">
+    <div class="heading-container">
+        <h2 class="heading-font">Add Food</h2>
+    </div>
+
+    <div class="form-background">
+        <form class="form-design" #f="ngForm">
+            <div class="row ">
+                <div class="col-sm-12 col-lg-8 d-flex" style="flex-direction: column; justify-content: space-evenly;">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder=""
+                            [(ngModel)]="food.name" required="">
+                        <label for="firstname">Food Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+
+                        <textarea type="text" class="form-control" id="desc" placeholder="" style="height: 167px;"
+                            [(ngModel)]="food.description" name="description" required=""></textarea>
+                        <label for="desc">Description</label>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <div class="image-container">
+
+                        <label for="image"
+                            style="display: block; border: 2px dashed lightgray; height: 240px; padding: 10px;">
+                            <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+                                <div>
+                                    <img style="width: 160px; height: 170px; margin-top: 10px ;" [src]="imageUl" alt="">
+                                </div>
+                            </div>
+                        </label>
+                        <input type="file" class="form-control d-none" id="image" placeholder="" name="img"
+                            (change)="onFileSelected($event)" accept="image/*" [(ngModel)]="food.image">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-4 mb-4 ">
+
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="dob" name="dob" placeholder="" [(ngModel)]="price"
+                            required="">
+                        <label for="dob">Price </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+
+                        <select class="form-control" id="discounttype" name="discounttype" placeholder=""
+                            [(ngModel)]="discountType" (change)="onDiscountTypeChange()">
+                            <option value="" selected disabled hidden></option>
+                            <option>None</option>
+                            <option>Flat</option>
+                            <option>Percentage</option>
+                        </select>
+                        <label for="discounttype">Discount Type</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="discountin" placeholder="" name="discountin"
+                            [(ngModel)]="discountInvalue" (change)="onDiscountCaclulate()" [disabled]="selectedyet">
+                        <label for="discountin">Discount in {{discountIn}} </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="disprice" placeholder="" name="disprice"
+                            [(ngModel)]="discountedPrice" [disabled]="true">
+                        <label for="disprice">Discounted Price </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div style="padding: 0px 12px 0px 12px;">
+                    <button class="submit-employee" (click)="onAddFood(food)" [disabled]="!f.valid">
+                        <p class="par">Submit</p>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="employee">
+    <div class="heading-container">
+        <h2 class="heading-font">Foods</h2>
+        <button class="button-5" role="button" (click)="onAddFood()">ADD NEW FOOD</button>
+    </div>
+
+    <div class="heading-data">
+        <div style="overflow-x: auto;">
+            <table class="w-full text-sm text-left">
+                <thead class="text-primary border-b">
+                    <tr>
+                        <th class="p-3 header-color"> Image </th>
+                        <th class="p-3 header-color"> Name </th>
+                        <th class="p-3 header-color"> Price </th>
+                        <th class="p-3 header-color"> Discount Type </th>
+                        <th class="p-3 header-color"> Discount </th>
+                        <th class="p-3 header-color"> Discout Price </th>
+                        <th class="p-3 header-color"> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-data-border " *ngFor="let food of foods">
+                        <td class=" p-2 "><img src="{{food.image}}"
+                                style="height: 35px; width: 35px; border-radius: 50%;"> </td>
+                        <td class=" p-2">
+                            {{food.name}}
+                        </td>
+                        <td class="p-2">
+                            {{food.price}}
+                        </td>
+                        <td class=" p-2">
+                            {{food.discountType}}
+                        </td>
+                        <td class=" p-2">
+                            {{food.discount}}
+                        </td>
+                        <td class=" p-2">
+                            {{food.discountPrice}}
+                        </td>
+                        <td class="p-2">
+                            <div class="d-flex">
+                                <span class="material-symbols-outlined edit">
+                                    edit_document
+                                </span>
+                                <div class="m-1"></div>
+                                <span class="material-symbols-outlined pl-3 delete" (click)="onDeleteFood(food.id)">
+                                    delete_forever
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-footer">
+            <div style="margin-right: 4px;">
+                <label for="page">Items per Page:</label>
+                <select id="page" class="border bottom-1 ng-untouched ng-pristine ng-valid">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <div>1-{{foods.length}} of {{foods.length}}</div>
+        </div>
+    </div>
+
+</div>

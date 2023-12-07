@@ -6,19 +6,39 @@
                 <p class="logo-text">BSS RESTAURANT</p>
             </div>
         </div>
-        <div class="header-append col-6">
+        <div class="header-append ">
             <div class="aligncenter">
                 <div class="link-container">
-                    <a class="active-nav-link">Admin</a>
-                    <a class="nav-link">Our Services</a>
-                    <a class="nav-link">About Us</a>
-                    <a class="nav-link" (click)="onClilck()">
-                        <div class="cart-container">
-                            <span class="material-symbols-outlined">
-                                shopping_basket
-                            </span>
-                        </div>
-                    </a>
+                    <div *ngIf="isScreenBelow800; else elsePart" class="d-flex">
+                        <a class="nav-link" (click)="onClilckCart()">
+                            <div class="cart-container">
+                                <span class="material-symbols-outlined">
+                                    shopping_basket
+                                </span>
+                            </div>
+                        </a>
+                        <a class="nav-link">
+                            <div class="cart-container">
+                                <span class="material-symbols-outlined">
+                                    menu
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <ng-template #elsePart>
+                        <a class="active-nav-link">Admin</a>
+                        <a class="nav-link">Our Services</a>
+                        <a class="nav-link">About Us</a>
+
+                        <a class="nav-link" (click)="onClilckCart()">
+                            <div class="cart-container">
+                                <span class="material-symbols-outlined">
+                                    shopping_basket
+                                </span>
+                            </div>
+                        </a>
+                    </ng-template>
+
                 </div>
 
             </div>

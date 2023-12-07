@@ -69,7 +69,12 @@ export class AddFoodComponent {
     food.discount = this.discountInvalue;
     food.price = this.price;
     food.discountType = this.discountTypevalue;
-    food.discountPrice = this.discountedPrice;
+    if (this.discountType == 'none') {
+      food.discountPrice = this.price;
+    } else {
+      food.discountPrice = this.discountedPrice;
+    }
+
     food.base64 = this.imageUl;
     if (food.name === '') {
       this.toastr.error('Food Name Required', 'Failed');

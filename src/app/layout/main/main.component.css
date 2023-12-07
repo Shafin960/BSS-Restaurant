@@ -23,6 +23,7 @@
   width: 100%;
   min-height: calc(100vh - 66px);
   margin-top: 66px;
+  overflow-x: auto;
 }
 
 @media (max-width: 1150px) {

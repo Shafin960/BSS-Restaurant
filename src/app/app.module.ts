@@ -25,6 +25,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './components/cart/cart.component';
+import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-employee.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CartComponent } from './components/cart/cart.component';
     AddTableComponent,
     LoadingSpinnerComponent,
     CartComponent,
+    AssignEmployeeComponent,
   ],
   imports: [
     BrowserModule,

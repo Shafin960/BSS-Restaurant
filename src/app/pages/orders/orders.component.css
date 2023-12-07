@@ -1,0 +1,22 @@
+.new-order {
+    padding: 4rem;
+    height: calc(100vh - 66px);
+}
+
+.heading-font {
+    font-family: "Quattrocento", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: primary;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #cc080b;
+    width: 170px;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}

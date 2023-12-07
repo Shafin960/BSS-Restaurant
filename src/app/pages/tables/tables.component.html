@@ -26,11 +26,26 @@
                         <td class="p-3"><span class="material-symbols-outlined edit">
                                 check_circle
                             </span></td>
-                        <td class="p-3"></td>
+                        <td class="p-3">
+                            <div *ngFor="let name of table.employees" style="margin-bottom: 4px;">
+                                <div class="names">
+                                    <p style="margin-bottom: 0px; margin-right: 3px;">{{name.name}}</p>
+                                    <span class="material-symbols-outlined delete"
+                                        (click)="deleteFoodItem(name.employeeTableId)">
+                                        do_not_disturb_on
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined edit" style="display: block; width: 10px;"
+                                (click)="onAssignEmployee(table.id)">
+                                add_circle
+                            </span>
+
+                        </td>
                         <td class="p-3">
                             <div class="d-flex">
                                 <div class="m-1"></div>
-                                <span class="material-symbols-outlined pl-3 delete" (click)="onDeleteTable(table.id)">
+                                <span class="material-symbols-outlined pl-3 delete">
                                     delete_forever
                                 </span>
                             </div>

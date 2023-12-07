@@ -6,49 +6,15 @@
     <div class="order-container">
         <div class="table-select">
             <div class="table-scroll">
-                <h6 style="font-weight: 700; text-align: center; margin-bottom: 0.5rem;">Select a Table</h6>
+                <h6 style="font-weight: 700; text-align: center; margin-bottom: 0.5rem;">Select a Table
+                    ({{tables.length}})</h6>
                 <div class="tables">
-                    <div class="table">
+                    <div class="table" *ngFor="let table of tables">
                         <div
                             style="justify-content: center; align-items: center; flex-direction: column; width: 130px; height: 160px; display: flex;">
-                            <img src="../../../assets/chef.png"
+                            <img src="{{table.image}}"
                                 style="height: 120px; width: 120px; max-width: 100%; vertical-align: middle; ">
-                            <p>TB004</p>
-
-
-                        </div>
-                    </div>
-
-                    <div class="table">
-                        <div
-                            style="justify-content: center; align-items: center; flex-direction: column; width: 130px; height: 160px; display: flex;">
-                            <img src="../../../assets/chef.png"
-                                style="height: 120px; width: 120px; max-width: 100%; vertical-align: middle; ">
-                            <p>TB004</p>
-
-
-                        </div>
-                    </div>
-
-                    <div class="table">
-                        <div
-                            style="justify-content: center; align-items: center; flex-direction: column; width: 130px; height: 160px; display: flex;">
-                            <img src="../../../assets/chef.png"
-                                style="height: 120px; width: 120px; max-width: 100%; vertical-align: middle; ">
-                            <p>TB004</p>
-
-
-                        </div>
-                    </div>
-
-                    <div class="table">
-                        <div
-                            style="justify-content: center; align-items: center; flex-direction: column; width: 130px; height: 160px; display: flex;">
-                            <img src="../../../assets/chef.png"
-                                style="height: 120px; width: 120px; max-width: 100%; vertical-align: middle; ">
-                            <p>TB004</p>
-
-
+                            <p>{{table.tableNumber}}</p>
                         </div>
                     </div>
                 </div>
@@ -57,9 +23,33 @@
 
         <div class="food-select">
             <div class="food-scroll">
-                <h6 style="font-weight: 700; text-align: center; margin-bottom: 0.5rem;">Select Foods</h6>
+                <h6 style="font-weight: 700; text-align: center; margin-bottom: 0.5rem;">Select Foods ({{foods.length}})
+                </h6>
                 <div class="foods">
-                    <div class="food">
+                    <div class="food" *ngFor="let food of foods">
+                        <img style="margin: auto; border-radius: 50%; width: 190px; height: 190px; max-width: 100%;"
+                            src="{{food.image}}">
+                        <div
+                            style="display: flex; width: 100%; flex-direction: column; padding-right: 1rem; margin-left: 20px; ">
+                            <h3 style="font-size: 1.5rem; font-weight: bold;">{{food.name}}</h3>
+                            <p>{{food.description}}</p>
+                            <div
+                                style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; ">
+                                <div>
+                                    <p
+                                        style="text-decoration-line: line-through; color: #d32f2f; margin-bottom: 0px; font-size: 1.35rem;">
+                                        Price: <span style="font-weight: bold;">{{food.price}}৳</span>
+                                    </p>
+                                    <p style="color: #4CAF50; font-size: 1.35rem;">Discounted Price: <span
+                                            style="font-weight: bold;">{{food.discountPrice}}৳</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex" style="justify-content: center; align-items: center;">
+                                    <button class="button-61" role="button">Add To Cart</button>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

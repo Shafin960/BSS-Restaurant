@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
 import { GetTable } from 'src/app/models/getTables';
+import { AssignTablesService } from 'src/app/services/assign-tables.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tables',
@@ -12,10 +14,12 @@ import { GetTable } from 'src/app/models/getTables';
 })
 export class TablesComponent implements OnInit {
   tables: GetTable[] = [];
+
   constructor(
     private route: Router,
     private http: HttpClient,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private assign: AssignTablesService
   ) {}
   ngOnInit(): void {
     this.getTable();
@@ -41,5 +45,38 @@ export class TablesComponent implements OnInit {
         console.error('Error deleting food:', error);
       }
     );
+  }
+  onAssignEmployee(id: number) {
+    this.assign.setTableId(id);
+    this.route.navigate(['/assign']);
+  }
+
+  deleteFoodItem(employeeTableId: number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to delete this food item. This action cannot be undone.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.http
+          .delete(`${baseUrl}EmployeeTable/delete/${employeeTableId}`)
+          .subscribe(
+            () => {
+              this.getTable();
+              this.toastr.success(
+                'Employee Removed From This Table',
+                'Successful'
+              );
+            },
+            (error) => {
+              console.error('Deletion failed', error);
+            }
+          );
+      }
+    });
   }
 }

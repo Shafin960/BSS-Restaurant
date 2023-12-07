@@ -1,3 +1,6 @@
+<app-cart *ngIf="selected" (cancelClicked)="onCartCancel()"></app-cart>
+
+
 <div class="header ">
     <div class="header-content ">
         <div class="header-prepend ">
@@ -17,6 +20,7 @@
                                 </span>
                             </div>
                         </a>
+
                         <a class="nav-link">
                             <div class="cart-container">
                                 <span class="material-symbols-outlined">

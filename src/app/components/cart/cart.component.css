@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0");
 
+#cart-under {
+  margin: 0rem;
+  border-bottom: 3px solid #cc080b;
+  width: 96%;
+  opacity: 1;
+  margin-left: 10px;
+
+}
+
 .cart-main {
   background-color: #0009;
   overflow-y: hidden;
@@ -10,13 +19,13 @@
   display: flex;
   z-index: 10;
   top: 66px;
-  left: 256px;
+  left: 0px;
   position: fixed;
   right: 0px;
 }
 
 .cart-entry {
-  width: 50%;
+  width: 35%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   height: 100vh;
@@ -42,4 +51,12 @@
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 1rem;
+  margin-inline-end: 0;
+  color: primary;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.material-symbols-outlined:hover {
+  cursor: pointer;
 }

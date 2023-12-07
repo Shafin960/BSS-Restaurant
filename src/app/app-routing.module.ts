@@ -12,6 +12,7 @@ import { AddFoodComponent } from './pages/add-food/add-food.component';
 import { AddTableComponent } from './pages/add-table/add-table.component';
 import { NewOrderComponent } from './pages/new-order/new-order.component';
 import { CartComponent } from './components/cart/cart.component';
+import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-employee.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
       { path: 'addtable', component: AddTableComponent },
       { path: 'neworder', component: NewOrderComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'assign', component: AssignEmployeeComponent },
     ],
   },
 ];

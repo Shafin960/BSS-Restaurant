@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   isScreenBelow800: boolean = false;
+  selected = false;
   constructor(private route: Router) {}
   ngOnInit(): void {
     this.checkScreenWidth();
@@ -22,7 +23,11 @@ export class NavbarComponent implements OnInit {
   }
 
   onClilckCart() {
+    this.selected = !this.selected;
     // this.route.navigate(['/cart']);
     console.log('Clicking');
+  }
+  onCartCancel() {
+    this.selected = false;
   }
 }

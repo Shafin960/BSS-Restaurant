@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class FoodsComponent implements OnInit {
   foods: GetFood[] = [];
+  isLoading = false;
   constructor(
     private route: Router,
     private http: HttpClient,
@@ -28,9 +29,11 @@ export class FoodsComponent implements OnInit {
   }
 
   getFood() {
+    this.isLoading = true;
     this.http.get<any[]>(`${baseUrl}Food/datatable`).subscribe((posts) => {
       console.log(posts);
       this.foods = posts;
+      this.isLoading = false;
     });
   }
   onDeleteFood(id: number) {

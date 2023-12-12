@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class TablesComponent implements OnInit {
   tables: GetTable[] = [];
+  isLoading = false;
 
   constructor(
     private route: Router,
@@ -28,9 +29,11 @@ export class TablesComponent implements OnInit {
     this.route.navigate(['/addtable']);
   }
   getTable() {
+    this.isLoading = true;
     this.http.get<any[]>(`${baseUrl}Table/datatable`).subscribe((posts) => {
       console.log(posts);
       this.tables = posts;
+      this.isLoading = false;
     });
   }
   onDeleteTable(id: number) {

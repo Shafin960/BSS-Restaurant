@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class EmployeesComponent implements OnInit {
   employees: GetEmployee[] = [];
+  isLoading = false;
   constructor(
     private route: Router,
     private http: HttpClient,
@@ -52,9 +53,11 @@ export class EmployeesComponent implements OnInit {
   }
 
   getEmployee() {
+    this.isLoading = true;
     this.http.get<any[]>(`${baseUrl}Employee/datatable`).subscribe((posts) => {
       console.log(posts);
       this.employees = posts;
+      this.isLoading = false;
     });
   }
 }

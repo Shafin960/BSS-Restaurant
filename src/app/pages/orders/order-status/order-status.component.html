@@ -1,0 +1,17 @@
+<div *ngIf="!showDropdown; else drop" class="d-flex justify-content-between">
+    <p style="margin-bottom: 4px; font-size: 1.15rem;">{{statusO }} </p>
+    <span class="material-symbols-outlined" style="color: rgb(106, 168, 13); cursor: pointer;"
+        (click)="toggleDropdown()">
+        edit_square
+    </span>
+</div>
+<ng-template #drop>
+    <div class="dropdown-container">
+        <select class="custom-select" [(ngModel)]="selectedStatus" (change)="onStatusChange(selectedStatus)">
+            <option *ngFor="let status of orderStatus" [value]="status.value">
+                {{ status.text }}
+            </option>
+        </select>
+        <span class="select-arrow">&#9662;</span>
+    </div>
+</ng-template>

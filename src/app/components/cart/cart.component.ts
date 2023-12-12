@@ -22,6 +22,7 @@ import { GettableService } from 'src/app/services/gettable.service';
 })
 export class CartComponent implements OnInit {
   @Output() cancelClicked = new EventEmitter<void>();
+  @Output() zeroNow = new EventEmitter<void>();
   selectedTable = new GetTable();
   foodsToCheckOut: GetFood[] = [];
   subtotal = 0;
@@ -37,12 +38,6 @@ export class CartComponent implements OnInit {
     this.foodsToCheckOut = this.cartToFood.getOrderedFood();
     this.subtotal = this.calculateTotalPrice();
     this.selectedTable = this.table.getTableDetails();
-  }
-
-  forFoodDetails() {
-    for (let orderFood of this.foodsToCheckOut) {
-      this.submittedOrder.items.push();
-    }
   }
 
   calculateTotalPrice(): number {
@@ -89,6 +84,7 @@ export class CartComponent implements OnInit {
     this.submittedOrder.orderNumber = Date.now().toString();
     this.submittedOrder.amount = this.subtotal;
     this.submittedOrder.phoneNumber = '01687193003';
+    this.submittedOrder.orderTime = new Date();
     this.foodsToCheckOut.forEach((item) => {
       const foodItem: FoodDetails = {
         foodId: item.id,
@@ -98,12 +94,15 @@ export class CartComponent implements OnInit {
       };
       this.submittedOrder.items.push(foodItem);
     });
-
+    console.log(this.submittedOrder);
     this.http
       .post(`${baseUrl}Order/create`, this.submittedOrder)
       .subscribe((resonseData) => {
-        this.toastr.success('Table Created', 'Operation Successful');
+        this.toastr.success('Order Placed', 'Operation Successful');
         console.log(this.submittedOrder);
       });
+    this.cartToFood.deleteAllFoodsOfCart();
+
+    this.onCancel();
   }
 }

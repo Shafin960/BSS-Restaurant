@@ -6,12 +6,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: rgba(26, 26, 26, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
+
 .center {
   text-align: center !important;
   overflow-y: hidden;
@@ -24,6 +25,7 @@
   height: 100vh;
   width: 100%;
 }
+
 .login-img {
   display: flex;
   justify-content: center;
@@ -41,6 +43,7 @@
   transform: translateY(-1000px);
   animation: slideIn 2s ease-in forwards;
 }
+
 .animate-spinSlow {
   animation: spin-slow 20s linear infinite;
 }
@@ -49,24 +52,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .w480 {
   width: 480px;
 }
+
 .h480 {
   height: 480px;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 img {
   display: inline;
   vertical-align: middle;
 }
+
 .login-container {
   width: 540px;
   background-color: #f1f1f1;
@@ -77,6 +86,7 @@ img {
   transform: translatex(1000px);
   animation: slideIn 2s ease-in forwards;
 }
+
 @keyframes slideIn {
   to {
     transform: translatex(0);
@@ -90,6 +100,7 @@ img {
   align-items: center;
   justify-content: center;
 }
+
 .chef-img {
   margin-top: 20px;
   border-style: none;
@@ -98,6 +109,7 @@ img {
   overflow-clip-margin: content-box;
   overflow: clip;
 }
+
 .logo-text {
   margin-top: 10px;
   font-size: 24px;
@@ -117,6 +129,7 @@ img {
   font-size: 18px;
   text-align: left;
 }
+
 .input-field {
   width: 100%;
   outline: none;
@@ -125,6 +138,7 @@ img {
   border: 2px solid gray;
   border-radius: 5px;
 }
+
 .submitbtn {
   font-size: 18px;
   width: 100%;
@@ -139,10 +153,12 @@ img {
 .submitbtn:hover {
   background-color: #9b0608;
 }
+
 .link {
   color: #cc080b;
   text-decoration: none;
 }
+
 .login-form {
   padding: 30px;
 }

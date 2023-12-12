@@ -1,4 +1,5 @@
 <div class="employee">
+    <div *ngIf="isLoading" class="center-spinner"> <app-loading-spinner></app-loading-spinner> </div>
     <div class="heading-container">
         <h2 class="heading-font">Foods</h2>
         <button class="button-5" role="button" (click)="onAddFood()">ADD NEW FOOD</button>
@@ -9,32 +10,32 @@
             <table class="w-full text-sm text-left">
                 <thead class="text-primary border-b">
                     <tr>
-                        <th class="p-3 header-color"> Image </th>
-                        <th class="p-3 header-color"> Name </th>
-                        <th class="p-3 header-color"> Price </th>
-                        <th class="p-3 header-color"> Discount Type </th>
-                        <th class="p-3 header-color"> Discount </th>
-                        <th class="p-3 header-color"> Discout Price </th>
-                        <th class="p-3 header-color"> Action </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Image </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Name </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Price </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Discount Type </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Discount </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Discout Price </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Action </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="row-data-border " *ngFor="let food of foods">
                         <td class=" p-3 "><img src="{{food.image}}"
-                                style="height: 35px; width: 35px; border-radius: 50%;"> </td>
-                        <td class=" p-3">
+                                style="height: 50px; width: 50px; border-radius: 50%;"> </td>
+                        <td class=" p-3" style="font-size: 16px;">
                             {{food.name}}
                         </td>
-                        <td class="p-3">
+                        <td class="p-3" style="font-size: 16px;">
                             {{food.price}}
                         </td>
-                        <td class=" p-3">
+                        <td class=" p-3" style="font-size: 16px;">
                             {{food.discountType}}
                         </td>
-                        <td class=" p-3">
+                        <td class=" p-3" style="font-size: 16px;">
                             {{food.discount}}
                         </td>
-                        <td class=" p-3">
+                        <td class=" p-3" style="font-size: 16px;">
                             {{food.discountPrice}}
                         </td>
                         <td class="p-3">

@@ -3,6 +3,7 @@ export class OrderFood {
   orderNumber = '';
   amount = 0;
   phoneNumber = '';
+  orderTime!: Date;
   items: FoodDetails[] = [];
 }
 export class FoodDetails {

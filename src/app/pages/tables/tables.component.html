@@ -1,4 +1,5 @@
 <div class="employee">
+    <div *ngIf="isLoading" class="center-spinner"> <app-loading-spinner></app-loading-spinner> </div>
     <div class="heading-container">
         <h2 class="heading-font">Tables</h2>
         <button class="button-5" role="button" (click)="onAddTable()">ADD TABLE</button>
@@ -9,27 +10,30 @@
             <table class="w-full text-sm text-left">
                 <thead class="text-primary border-b">
                     <tr>
-                        <th class="p-3 header-color"> Image </th>
-                        <th class="p-3 header-color"> Table Number </th>
-                        <th class="p-3 header-color"> Total Seats </th>
-                        <th class="p-3 header-color"> Availability </th>
-                        <th class="p-3 header-color"> Employees </th>
-                        <th class="p-3 header-color"> Action </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Image </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Table Number </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Total Seats </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Availability </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Employees </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Action </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="row-data-border" *ngFor="let table of  tables">
                         <td class="p-3"><img src="{{table.image}}"
-                                style="height: 40px; width: 40px; border-radius: 50%;"></td>
-                        <td class="p-3">{{table.tableNumber}}</td>
-                        <td class="p-3">{{table.numberOfSeats}}</td>
-                        <td class="p-3"><span class="material-symbols-outlined edit">
+                                style="height: 50px; width: 50px; border-radius: 50%;"></td>
+                        <td class="p-3" style="font-size: 16px;">{{table.tableNumber}}</td>
+                        <td class="p-3" style="font-size: 16px;">{{table.numberOfSeats}}</td>
+                        <td class="p-3" style="font-size: 16px;"><span class="material-symbols-outlined static">
                                 check_circle
                             </span></td>
                         <td class="p-3">
                             <div *ngFor="let name of table.employees" style="margin-bottom: 4px;">
                                 <div class="names">
-                                    <p style="margin-bottom: 0px; margin-right: 3px;">{{name.name}}</p>
+                                    <p style="margin-bottom: 0px !important; margin-right: 3px;" style="font-size: 16px;  text-overflow: ellipsis; white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">
+                                        {{name.name}}</p>
                                     <span class="material-symbols-outlined delete"
                                         (click)="deleteTableEmployeeItem(name.employeeTableId)">
                                         do_not_disturb_on

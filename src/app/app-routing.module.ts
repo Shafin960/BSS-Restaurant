@@ -13,12 +13,14 @@ import { AddTableComponent } from './pages/add-table/add-table.component';
 import { NewOrderComponent } from './pages/new-order/new-order.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-employee.component';
+import { AuthGuard } from './shared/auth-guard.guard';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: '',
     component: MainComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'home', component: AdminComponent },
       { path: 'employees', component: EmployeesComponent },

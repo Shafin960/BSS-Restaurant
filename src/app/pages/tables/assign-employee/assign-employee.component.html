@@ -8,16 +8,16 @@
         </div>
 
         <div class="data-container">
-            <div style="width: 16rem; height: 16rem; ">
-                <img src="{{table.image}}"
-                    style="margin-left: auto; margin-right: auto; height: 16rem; width: 16rem;" />
+            <div class="centertime">
+                <img src="{{table.image}}" style="margin-left: auto; margin-right: auto; width: 8rem; height: 8rem; " />
+
             </div>
             <div class="details">
                 <h2 style="font-size: inherit; font-weight: inherit;">Table ID: {{table.id}}</h2>
                 <h2 style="font-size: inherit; font-weight: inherit;">Number of Seats: {{table.numberOfSeats}} </h2>
                 <div class="dropdown border border-primary">
                     <div class="d-flex align-items-center  m-2" *ngFor="let addedEmployee of addedEmployees">
-                        <p style="margin-bottom: 0px;font-size: 15px;">{{addedEmployee.name}}</p>
+                        <p style="margin-bottom: 5px!important ; font-size: 15px; ">{{addedEmployee.name}}</p>
                         <span class="material-symbols-outlined here" style="size: 14px;"
                             (click)="onRemoveEmployee(addedEmployee)">
                             cancel

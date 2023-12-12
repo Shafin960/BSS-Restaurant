@@ -26,6 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './components/cart/cart.component';
 import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-employee.component';
+import { MobileNavbarComponent } from './components/mobile-navbar/mobile-navbar.component';
+import { OrderStatusComponent } from './pages/orders/order-status/order-status.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-e
     LoadingSpinnerComponent,
     CartComponent,
     AssignEmployeeComponent,
+    MobileNavbarComponent,
+    OrderStatusComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,6 @@ import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-e
     ToastrModule.forRoot(),
   ],
   providers: [
-    AutService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

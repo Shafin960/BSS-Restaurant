@@ -1,0 +1,39 @@
+<div class="navbar-mobile" (click)="onCollpase()">
+    <div class="d-flex flex-column flex-shrink-0 pt-2 p-3 bg-light"
+        style="width: 256px; height: 100%; position: fixed; z-index: 200;" id="border">
+        <div class="row">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <div class="col-3">
+                    <img src="https://legendary-lokum-6fdd3d.netlify.app/assets/rifat-5033ad07.jpg" id="imgprof">
+                </div>
+                <div class="col-9">
+                    <p id="admin">Admin</p>
+                    <p id="text-small">admin@mail.com</p>
+                </div>
+            </a>
+        </div>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item" *ngFor="let menu of menus">
+                <a [routerLink]="menu.link" routerLinkActive="active-link" class="nav-link m-1 d-flex"
+                    aria-current="page" id="linkcolor">
+                    <mat-icon>
+                        <span class="material-symbols-outlined">
+                            {{menu.icon}}
+                        </span>
+                    </mat-icon>
+                    <span style="margin-left: 10px; margin-top: 2px;">{{menu.text}}</span>
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="px-3">
+            <button class="sidebar-logout" (click)="onLogout()">
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+                <p class="par">Logout</p>
+            </button>
+        </div>
+    </div>
+</div>

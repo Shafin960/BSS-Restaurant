@@ -1,0 +1,36 @@
+.dropdown-container {
+    position: relative;
+    width: 200px;
+}
+
+.custom-select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+.custom-select-option {
+    padding: 10px;
+}
+
+
+.custom-select-option:hover {
+    background-color: #f4f4f4;
+}

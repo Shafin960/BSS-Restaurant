@@ -1,4 +1,5 @@
 <div class="employee">
+    <div *ngIf="isLoading" class="center-spinner"> <app-loading-spinner></app-loading-spinner> </div>
     <div class="heading-container">
         <h2 class="heading-font">Employees</h2>
         <button class="button-5" role="button" (click)="onAddEmployee()">ADD EMPLOYEE</button>
@@ -9,32 +10,32 @@
             <table class="w-full text-sm text-left">
                 <thead class="text-primary border-b">
                     <tr>
-                        <th class="p-3 header-color"> Image </th>
-                        <th class="p-3 header-color"> Name </th>
-                        <th class="p-3 header-color"> Email </th>
-                        <th class="p-3 header-color"> Phone </th>
-                        <th class="p-3 header-color"> Joining Date </th>
-                        <th class="p-3 header-color"> Designation </th>
-                        <th class="p-3 header-color"> Action </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Image </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Name </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Email </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Phone </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Joining Date </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Designation </th>
+                        <th class="p-3 header-color" style="font-size: 18px;"> Action </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="row-data-border" *ngFor="let employee of employees">
                         <td class="p-3"><img src="{{employee.image}}"
-                                style="height: 40px; width: 40px; border-radius: 50%;"></td>
+                                style="height: 50px; width: 50px; border-radius: 50%;"></td>
                         <td class="p-3 inline-grid">
                             <p style="margin-bottom: 0px; margin-top: 4px; min-width: 50px;     min-width: 50px;
                             white-space: nowrap;
                             overflow: hidden;
-                            text-overflow: ellipsis;"> {{employee.fullName}}</p>
+                            text-overflow: ellipsis; font-size: 16px;"> {{employee.fullName}}</p>
                             <span class="material-symbols-outlined">
                                 star
                             </span>
                         </td>
-                        <td class="p-3">{{employee.email}}</td>
-                        <td class="p-3">{{employee.phone}}</td>
-                        <td class="p-3">{{employee.joinDate}}</td>
-                        <td class="p-3">{{employee.designation}}</td>
+                        <td class="p-3" style="font-size: 16px;">{{employee.email}}</td>
+                        <td class="p-3" style="font-size: 16px;">{{employee.phone}}</td>
+                        <td class="p-3" style="font-size: 16px;">{{employee.joinDate}}</td>
+                        <td class="p-3" style="font-size: 16px;">{{employee.designation}}</td>
                         <td class="p-3">
                             <div class="d-flex">
                                 <span class="material-symbols-outlined edit">

@@ -1,6 +1,6 @@
+import { trigger } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { GetFood } from 'src/app/models/getFood';
 import { FoodsService } from 'src/app/services/foods.service';
 
@@ -13,15 +13,17 @@ export class NavbarComponent implements OnInit {
   isScreenBelow800: boolean = false;
   selected = false;
   cartvalue = 0;
-
-  constructor(private route: Router, private cartnumber: FoodsService) {}
+  sidebarSelected = false;
+  array: any[] = [];
+  constructor(private cartnumber: FoodsService) {}
   ngOnInit(): void {
     this.checkScreenWidth();
-    this.cartvalue = this.cartnumber.orderFood.length;
+    this.cartvalue = this.cartnumber.getCartLength.length;
     this.cartnumber.getCartLength().subscribe((orderedfoods: GetFood[]) => {
       this.cartvalue = orderedfoods.length;
     });
-    console.log(this.cartvalue);
+    this.array = this.cartnumber.getOrderedFood();
+    console.log(this.array);
   }
   checkScreenWidth() {
     this.isScreenBelow800 = window.innerWidth < 1150;
@@ -34,10 +36,17 @@ export class NavbarComponent implements OnInit {
 
   onClilckCart() {
     this.selected = !this.selected;
-    // this.route.navigate(['/cart']);
-    console.log('Clicking');
   }
   onCartCancel() {
     this.selected = false;
+  }
+  onMenuClick() {
+    this.sidebarSelected = !this.sidebarSelected;
+    console.log(this.sidebarSelected);
+  }
+
+  onNavCancel() {
+    this.sidebarSelected = false;
+    console.log(this.sidebarSelected);
   }
 }

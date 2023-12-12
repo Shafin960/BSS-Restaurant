@@ -27,4 +27,9 @@ export class FoodsService {
   getCartLength(): Observable<GetFood[]> {
     return this.orderedFoodsChanged.asObservable();
   }
+
+  deleteAllFoodsOfCart() {
+    this.orderFoods = [];
+    this.orderedFoodsChanged.next([]);
+  }
 }

@@ -1,5 +1,5 @@
 <app-cart *ngIf="selected" (cancelClicked)="onCartCancel()"></app-cart>
-
+<app-mobile-navbar *ngIf="sidebarSelected" (cancelClickedSide)="onNavCancel()"></app-mobile-navbar>
 
 <div class="header ">
     <div class="header-content ">
@@ -27,7 +27,7 @@
 
                         <a class="nav-link">
                             <div class="cart-container">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" (click)="onMenuClick()">
                                     menu
                                 </span>
 

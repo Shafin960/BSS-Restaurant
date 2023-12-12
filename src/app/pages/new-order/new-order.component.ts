@@ -20,6 +20,7 @@ export class NewOrderComponent {
   selectedTable = new GetTable();
   selectedFood: any;
   isTableSelected = false;
+  isLoading = false;
   constructor(
     private route: Router,
     private http: HttpClient,
@@ -33,11 +34,13 @@ export class NewOrderComponent {
   }
 
   getTable() {
+    this.isLoading = true;
     this.http.get<any[]>(`${baseUrl}Table/datatable`).subscribe((posts) => {
       this.tables = posts;
     });
     this.http.get<any[]>(`${baseUrl}Food/datatable`).subscribe((posts) => {
       this.foods = posts;
+      this.isLoading = false;
     });
   }
   selectTable(table: GetTable) {

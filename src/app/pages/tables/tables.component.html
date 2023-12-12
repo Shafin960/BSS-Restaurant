@@ -31,7 +31,7 @@
                                 <div class="names">
                                     <p style="margin-bottom: 0px; margin-right: 3px;">{{name.name}}</p>
                                     <span class="material-symbols-outlined delete"
-                                        (click)="deleteFoodItem(name.employeeTableId)">
+                                        (click)="deleteTableEmployeeItem(name.employeeTableId)">
                                         do_not_disturb_on
                                     </span>
                                 </div>
@@ -45,7 +45,7 @@
                         <td class="p-3">
                             <div class="d-flex">
                                 <div class="m-1"></div>
-                                <span class="material-symbols-outlined pl-3 delete">
+                                <span class="material-symbols-outlined pl-3 delete" (click)="onDeleteTable(table.id)">
                                     delete_forever
                                 </span>
                             </div>

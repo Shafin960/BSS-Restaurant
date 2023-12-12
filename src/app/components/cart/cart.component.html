@@ -8,11 +8,92 @@
                 cancel
             </span>
         </div>
-        <hr id="cart-under">
 
-        <div class="cart">
-            <div class="row">
+        <div class="cart-select" *ngIf="foodsToCheckOut.length>0">
+            <div class="cart-scroll">
+                <div class="carts">
+                    <div class="cart"
+                        style="margin-bottom: 0.25rem; justify-content: space-between; width: 100%; height: 100%; border-radius: 5px; border: 1px solid #cc080b; padding: 0.15rem;"
+                        *ngFor="let food of foodsToCheckOut">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-column justify-content-between align-items-between">
+                                    <button class="button-5" (click)="onDecrementFood(food)">-</button>
+                                    <button class="button-5"> {{food.count}} </button>
+                                    <button class="button-5" (click)="onIncrementFood(food)">+</button>
+                                </div>
+                                <div class="d-flex ">
+                                    <img src="{{food.image}}"
+                                        style="border-radius: 50%; width: 70px; height: 70px; max-width: 100%; margin-left: 0.5rem; margin-right: 0.55rem; margin-top: 0.6rem;">
+                                    <div class="d-flex justify-content-between align-items-between flex-column"
+                                        style="margin-left: 0.25rem; margin-right: 0.25rem;">
+                                        <div>
+                                            <h5
+                                                style="margin-top: 20px; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">
+                                                {{food.name}}</h5>
+                                        </div>
 
+                                        <p style="font-family: 'Josefin Sans', sans-serif;">
+                                            {{food.count }} ✖ {{food.discountPrice }} ৳</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column justify-content-end align-items-end"
+                                style="margin-right: .25rem;">
+                                <span class="material-symbols-outlined"
+                                    style="cursor: pointer; color: #cc080b; margin-bottom: 15px;"
+                                    (click)="onDeleteItem(food)">
+                                    delete_forever
+                                </span>
+                                <p style="font-family: 'Josefin Sans', sans-serif; font-weight: bold;">
+                                    {{food.totalPrice }} ৳</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div *ngIf="foodsToCheckOut.length>0" style=" height: 75vh; margin-right: 10px;" class="d-flex flex-column">
+            <div class="d-flex flex-column " style="overflow-y: auto; width: 100%;  ">
+                <div class="d-flex"
+                    style="padding: 0.5rem; margin: 5px; justify-content: space-between; width: 100%; height: 6rem; border-radius: 5px; border: 1px solid #cc080b; "
+                    *ngFor="let food of foodsToCheckOut">
+                    <div class="d-flex ml-4">
+                        <img src="{{food.image}}"
+                            style="border-radius: 50%; width: 80px; height: 80px; max-width: 100%;">
+                        <div class="d-flex flex-column ml-5">
+                            <h2>{{food.name}}</h2>
+                            <div style="margin-top: 5px;">
+                                <button class="buttons" (click)="onDecrementFood(food)">-</button>
+                                <button class="buttons"> {{food.count}} </button>
+                                <button class="buttons" (click)="onIncrementFood(food)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column" style="margin-right: 1.5rem;">
+                        <span class="material-symbols-outlined" style="cursor: pointer;" (click)="onDeleteItem(food)">
+                            delete_forever
+                        </span>
+                        <p>{{food.totalPrice}}</p>
+                    </div>
+
+                </div>
+            </div> 
+        </div> -->
+        <div *ngIf="foodsToCheckOut.length>0" style="margin-left: 10px; margin-right: 10px; margin-top: 10px;">
+            <hr style="margin: 1rem 0;
+            color: inherit;
+            border: 0;
+            border-top: var(--bs-border-width) solid;
+            opacity: .25;">
+            <div class="d-flex flex-row" style="justify-content: space-between; width: 100%; ">
+                <button class="order-button" (click)="onSubmitOrder()">Confirm Order</button>
+                <h2 style="padding-top: 8px; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">{{subtotal }}
+                    ৳
+                </h2>
             </div>
         </div>
     </div>

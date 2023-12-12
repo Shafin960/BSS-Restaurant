@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Quattrocento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0");
+
+
+.material-symbols-outlined {
+    font-size: 50px;
+    color: #cc080b;
+}
 
 .new-order {
     padding: 4rem;
@@ -143,6 +150,7 @@
     touch-action: manipulation;
     vertical-align: middle;
     will-change: transform, opacity;
+    z-index: 10;
 }
 
 .button-61:hover {
@@ -150,6 +158,15 @@
 }
 
 .button-61:disabled {
+    background-color: rgba(0, 0, 0, .12);
+    box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
+    color: rgba(0, 0, 0, .37);
+    cursor: default;
+    pointer-events: none;
+}
+
+
+.off {
     background-color: rgba(0, 0, 0, .12);
     box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
     color: rgba(0, 0, 0, .37);
@@ -168,4 +185,75 @@
 .button-61:active {
     box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
     background: rgb(245, 107, 107);
+}
+
+.selected {
+    background-color: #FF0000;
+    color: white;
+}
+
+@media (max-width: 1150px) {
+    .new-order {
+        padding: 2rem;
+    }
+
+    .order-container {
+        flex-direction: column;
+    }
+
+    .table-select {
+        width: 100%;
+    }
+
+    .tables {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-direction: row;
+        height: calc(100% - 35%);
+    }
+
+    .table {
+        margin-right: 16px;
+        margin-bottom: 0px;
+    }
+
+    .food-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .food {
+        flex-direction: column;
+    }
+
+
+}
+
+.tables::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+}
+
+.tables::-webkit-scrollbar-thumb {
+    background-color: #e4e4e4;
+    border-radius: 10px;
+}
+
+.tables::-webkit-scrollbar-thumb:hover {
+    background-color: #cc080b;
+}
+
+.foods::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+}
+
+.foods::-webkit-scrollbar-thumb {
+    background-color: #e4e4e4;
+    border-radius: 10px;
+}
+
+.foods::-webkit-scrollbar-thumb:hover {
+    background-color: #cc080b;
 }

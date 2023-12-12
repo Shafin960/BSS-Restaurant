@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0");
+
 .new-order {
     padding: 4rem;
     height: calc(100vh - 66px);
@@ -19,4 +21,38 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.card-main {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px !important;
+    background-color: rgb(255 255 255);
+    border-radius: 0.375rem;
+    position: relative;
+}
+
+.card-entry {
+    translate: none;
+    rotate: none;
+    scale: none;
+    transform: translate(0px, 0px);
+    opacity: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.scrool::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+}
+
+.scrool::-webkit-scrollbar-thumb {
+    background-color: #e4e4e4;
+    border-radius: 10px;
+}
+
+.scrool::-webkit-scrollbar-thumb:hover {
+    background-color: #cc080b;
 }

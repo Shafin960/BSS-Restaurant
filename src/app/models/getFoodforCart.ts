@@ -1,4 +1,4 @@
-export class GetFood {
+export class GetFoodForCart {
   id = 0;
   name = '';
   description = '';
@@ -9,5 +9,4 @@ export class GetFood {
   image = '';
   isSelectedFood = false;
   count = 1;
-  totalPrice = this.discountPrice;
 }

@@ -34,27 +34,39 @@ export class TablesComponent implements OnInit {
     });
   }
   onDeleteTable(id: number) {
-    this.http.delete(`${baseUrl}Table/delete/${id}`).subscribe(
-      () => {
-        console.log('Food deleted successfully');
-        this.getTable();
-        this.toastr.success('Table Deleted', 'Delete');
-        this.route.navigate(['/tables']);
-      },
-      (error) => {
-        console.error('Error deleting food:', error);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to remove this Table from the list. This action cannot be undone',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.http.delete(`${baseUrl}Table/delete/${id}`).subscribe(
+          () => {
+            console.log('Table deleted successfully');
+            this.getTable();
+            this.toastr.success('Table Deleted', 'Delete');
+            this.route.navigate(['/tables']);
+          },
+          (error) => {
+            console.error('Error deleting food:', error);
+          }
+        );
       }
-    );
+    });
   }
   onAssignEmployee(id: number) {
     this.assign.setTableId(id);
     this.route.navigate(['/assign']);
   }
 
-  deleteFoodItem(employeeTableId: number) {
+  deleteTableEmployeeItem(employeeTableId: number) {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You are about to delete this food item. This action cannot be undone.',
+      text: 'You are about to remove this employee from this table.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',

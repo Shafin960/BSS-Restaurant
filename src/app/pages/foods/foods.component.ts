@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { GetFood } from 'src/app/models/getFood';
 import { baseUrl } from 'src/app/environments/environment';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-foods',
@@ -33,16 +34,28 @@ export class FoodsComponent implements OnInit {
     });
   }
   onDeleteFood(id: number) {
-    this.http.delete(`${baseUrl}Food/delete/${id}`).subscribe(
-      () => {
-        console.log('Food deleted successfully');
-        this.getFood();
-        this.toastr.success('Food Deleted', 'Delete');
-        this.route.navigate(['/foods']);
-      },
-      (error) => {
-        console.error('Error deleting food:', error);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to delete this food item from list. This action cannot be undone',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.http.delete(`${baseUrl}Food/delete/${id}`).subscribe(
+          () => {
+            console.log('Food deleted successfully');
+            this.getFood();
+            this.toastr.success('Food Deleted', 'Delete');
+            this.route.navigate(['/foods']);
+          },
+          (error) => {
+            console.error('Error deleting food:', error);
+          }
+        );
       }
-    );
+    });
   }
 }

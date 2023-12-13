@@ -28,11 +28,22 @@ export class LoginComponent {
   }
   onLogin(user: User) {
     this.isLoading = true;
-    this.authService.login(user).subscribe((response) => {
-      localStorage.setItem('authToken', response.token);
-      localStorage.setItem('user', JSON.stringify(response.user));
-      this.isLoading = false;
-      this.route.navigate(['/']);
-    });
+    this.authService.login(user).subscribe(
+      (response) => {
+        localStorage.setItem('authToken', response.token);
+        localStorage.setItem('user', JSON.stringify(response.user));
+        this.isLoading = false;
+        this.route.navigate(['/']);
+      },
+      (error) => {
+        this.isLoading = false;
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Incorrect Email or Password',
+          footer: '<a href="#">Forgot Password?</a>',
+        });
+      }
+    );
   }
 }

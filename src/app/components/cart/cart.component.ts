@@ -23,6 +23,7 @@ import { GettableService } from 'src/app/services/gettable.service';
 export class CartComponent implements OnInit {
   @Output() cancelClicked = new EventEmitter<void>();
   @Output() zeroNow = new EventEmitter<void>();
+
   selectedTable = new GetTable();
   foodsToCheckOut: GetFood[] = [];
   subtotal = 0;

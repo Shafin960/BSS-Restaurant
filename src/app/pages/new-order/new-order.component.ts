@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
@@ -21,6 +21,7 @@ export class NewOrderComponent {
   selectedFood: any;
   isTableSelected = false;
   isLoading = false;
+  // stillFoodSelected = true;
   constructor(
     private route: Router,
     private http: HttpClient,
@@ -31,6 +32,21 @@ export class NewOrderComponent {
 
   ngOnInit(): void {
     this.getTable();
+    this.foodToCart.isRemoved.subscribe((removedFoodId: number) => {
+      // this.stillFoodSelected = false;
+      const foodIndex = this.foods.findIndex(
+        (food) => food.id === removedFoodId
+      );
+      if (foodIndex !== -1) {
+        this.foods[foodIndex].isSelectedFood = false;
+      }
+      console.log(foodIndex);
+    });
+    this.foodToCart.allRemoved.subscribe(() => {
+      this.foods.forEach((food) => {
+        food.isSelectedFood = false;
+      });
+    });
   }
 
   getTable() {
@@ -50,6 +66,7 @@ export class NewOrderComponent {
   }
   onAddedToCart(food: GetFood) {
     food.isSelectedFood = true;
+    // this.stillFoodSelected = true;
     food.count = 1;
     food.totalPrice = food.discountPrice;
     this.foodToCart.orderFood(food);

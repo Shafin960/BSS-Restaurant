@@ -14,9 +14,10 @@ import { NewOrderComponent } from './pages/new-order/new-order.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-employee.component';
 import { AuthGuard } from './shared/auth-guard.guard';
+import { goBackGuard } from './shared/go-back.guard';
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [goBackGuard] },
   {
     path: '',
     component: MainComponent,

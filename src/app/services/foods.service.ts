@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { GetFood } from '../models/getFood';
 import { Observable, Subject } from 'rxjs';
 
@@ -8,6 +8,8 @@ import { Observable, Subject } from 'rxjs';
 export class FoodsService {
   orderFoods: GetFood[] = [];
   orderedFoodsChanged = new Subject<GetFood[]>();
+  @Output() isRemoved = new EventEmitter<number>();
+  @Output() allRemoved = new EventEmitter<void>();
 
   constructor() {}
 
@@ -20,9 +22,11 @@ export class FoodsService {
     return this.orderFoods;
   }
   deleteThatFood(food: GetFood) {
+    console.log(food);
+    const removedFoodId = food.id;
     this.orderFoods = this.orderFoods.filter((item) => item.id !== food.id);
     this.orderedFoodsChanged.next(this.orderFoods.slice());
-    console.log(this.orderFoods);
+    this.isRemoved.emit(removedFoodId);
   }
   getCartLength(): Observable<GetFood[]> {
     return this.orderedFoodsChanged.asObservable();
@@ -31,5 +35,6 @@ export class FoodsService {
   deleteAllFoodsOfCart() {
     this.orderFoods = [];
     this.orderedFoodsChanged.next([]);
+    this.allRemoved.emit();
   }
 }

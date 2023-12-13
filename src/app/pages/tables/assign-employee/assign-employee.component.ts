@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
@@ -14,6 +14,9 @@ import { AssignTablesService } from 'src/app/services/assign-tables.service';
 })
 export class AssignEmployeeComponent implements OnInit {
   isAddingEmployee = false;
+
+  @Output() cancelClicked = new EventEmitter<void>();
+  @Output() assignClicked = new EventEmitter<void>();
   onToggleIsAddingEmployee() {
     this.isAddingEmployee = !this.isAddingEmployee;
   }
@@ -76,11 +79,12 @@ export class AssignEmployeeComponent implements OnInit {
       .subscribe((response) => {
         console.log(this.postEmployees);
         this.toastr.success('Employees Assigned', 'Operation Successful!');
-        this.route.navigate(['/tables']);
+        this.cancelClicked.emit();
       });
+    this.assignClicked.emit();
   }
 
   onCloseTab() {
-    this.route.navigate(['/tables']);
+    this.cancelClicked.emit();
   }
 }

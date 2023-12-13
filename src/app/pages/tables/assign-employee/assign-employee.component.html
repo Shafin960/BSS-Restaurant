@@ -1,15 +1,16 @@
 <div class="assign-employee">
     <div class="employee-container">
         <div class="header">
-            <h2 style="font-size: 22px; margin: 0; font-weight: inherit;">Assign Employee To a Table</h2>
-            <span class="material-symbols-outlined " style="cursor: pointer;" (click)="onCloseTab()">
+            <h2 style="font-size: 22px; margin: 0; font-weight: inherit; padding-top: 0.5rem;">Assign Employee To a
+                Table</h2>
+            <span class="material-symbols-outlined " id="cross" style="cursor: pointer; " (click)="onCloseTab()">
                 close
             </span>
         </div>
 
         <div class="data-container">
             <div class="centertime">
-                <img src="{{table.image}}" style="margin-left: auto; margin-right: auto; width: 8rem; height: 8rem; " />
+                <img src="{{table.image}}" class="tableimg" />
 
             </div>
             <div class="details">
@@ -17,21 +18,23 @@
                 <h2 style="font-size: inherit; font-weight: inherit;">Number of Seats: {{table.numberOfSeats}} </h2>
                 <div class="dropdown border border-primary">
                     <div class="d-flex align-items-center  m-2" *ngFor="let addedEmployee of addedEmployees">
-                        <p style="margin-bottom: 5px!important ; font-size: 15px; ">{{addedEmployee.name}}</p>
-                        <span class="material-symbols-outlined here" style="size: 14px;"
+                        <p style="margin-bottom: 5px!important ;padding-top: 5px; font-size: 15px; ">
+                            {{addedEmployee.name}}</p>
+                        <span class="material-symbols-outlined here" id="crossemp"
                             (click)="onRemoveEmployee(addedEmployee)">
                             cancel
                         </span>
                     </div>
-                    <span class="material-symbols-outlined here " style="position: absolute; right: 1px; top: 5px;"
-                        (click)="onToggleIsAddingEmployee()"> {{
+                    <span class="material-symbols-outlined here" id="toggle"
+                        style="position: absolute; right: 1px; top: 5px;" (click)="onToggleIsAddingEmployee()"> {{
                         isAddingEmployee ?
                         'arrow_drop_up' : 'arrow_drop_down' }}</span>
                 </div>
 
                 <div class="mt-3 here" *ngIf="isAddingEmployee">
                     <div *ngFor="let employee of employees">
-                        <p (click)="addEmployeeToTable(employee)" style="font-size: 15px;">{{employee.name}}</p>
+                        <p (click)="addEmployeeToTable(employee)"
+                            style="font-size: 15px; margin-bottom: 1px !important;">{{employee.name}}</p>
                     </div>
                 </div>
                 <div style="padding: 0px 12px 0px 12px; margin-top: 5px;" (click)="onAddOnAssignedEmployees()">
@@ -46,3 +49,31 @@
 
     </div>
 </div>
+<!-- <div class="modal-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+            <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                Level 1: .col-sm-9
+                <div class="row">
+                    <div class="col-8 col-sm-6">
+                        Level 2: .col-8 .col-sm-6
+                    </div>
+                    <div class="col-4 col-sm-6">
+                        Level 2: .col-4 .col-sm-6
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

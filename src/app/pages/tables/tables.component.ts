@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 export class TablesComponent implements OnInit {
   tables: GetTable[] = [];
   isLoading = false;
-
+  showAssignComp: boolean = false;
   constructor(
     private route: Router,
     private http: HttpClient,
@@ -63,9 +63,18 @@ export class TablesComponent implements OnInit {
   }
   onAssignEmployee(id: number) {
     this.assign.setTableId(id);
-    this.route.navigate(['/assign']);
+    this.showAssignComp = !this.showAssignComp;
+    // this.route.navigate(['/assign']);
   }
 
+  onCloseModal() {
+    this.showAssignComp = !this.showAssignComp;
+  }
+
+  tableChanged() {
+    this.showAssignComp = !this.showAssignComp;
+    this.getTable();
+  }
   deleteTableEmployeeItem(employeeTableId: number) {
     Swal.fire({
       title: 'Are you sure?',

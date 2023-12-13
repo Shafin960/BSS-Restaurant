@@ -22,7 +22,7 @@
 }
 
 .new-order {
-    padding: 4rem;
+    padding: 2rem 1.5rem 2rem 4rem;
     height: calc(100vh - 66px);
 }
 
@@ -49,11 +49,12 @@
     flex-direction: row;
     width: 100%;
     margin: -0.75rem;
+    height: 90%;
 }
 
 .table-select {
     padding: 0.75rem;
-    margin-left: 0.75rem;
+    /* margin-left: 0.75rem; */
     width: 25%;
 }
 
@@ -123,6 +124,7 @@
     display: flex;
     margin-bottom: 25px;
     border-radius: 10px;
+    background-color: white;
 }
 
 .food:hover {

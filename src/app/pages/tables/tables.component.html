@@ -38,6 +38,7 @@
                                         (click)="deleteTableEmployeeItem(name.employeeTableId)">
                                         do_not_disturb_on
                                     </span>
+
                                 </div>
                             </div>
                             <span class="material-symbols-outlined edit" style="display: block; width: 10px;"
@@ -70,5 +71,6 @@
             <div>1-{{tables.length}} of {{tables.length}} </div>
         </div>
     </div>
-
+    <app-assign-employee *ngIf="showAssignComp" (cancelClicked)="onCloseModal()"
+        (assignClicked)="tableChanged()"></app-assign-employee>
 </div>

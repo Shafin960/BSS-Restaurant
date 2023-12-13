@@ -11,26 +11,41 @@ Password: Admin@123
 
 Install Restaurant-Management-App with npm
 
+Install Node 
 ```bash
   npm install 
+```
+Install Angular CLI 
+```bash
   npm install -g @angular/cli
+```
+Open your project folder and command
+```bash
   ng serve --open
 ```
     
 ## Features Of The Project
-**1)Login-** The user will be able to view and modify all admin-side operations after logging in as an admin. \
+**1)Login-** The user will be able to view and modify all admin-side operations after logging in as an admin. 
 
-**2)Employee-** This page contains a list of all the employees, and the admin can add or remove any employee by clicking the add employee button, which requires the addition of the necessary information. \
+**2)Employee-** This page contains a list of all the employees, and the admin can add or remove any employee by clicking the add employee button, which requires the addition of the necessary information. 
 
-**3)Tables-** If the admin so chooses, he can also remove or add new tables. Another important feature is that the administrator has the ability to add and remove employees from a certain table. \
+**3)Tables-** If the admin so chooses, he can also remove or add new tables. Another important feature is that the administrator has the ability to add and remove employees from a certain table. 
 
-**4)Foods-** This is very similar to the employees list. Admin can add and remove foods in this section. \
+**4)Foods-** This is very similar to the employees list. Admin can add and remove foods in this section. 
 
-**5)New Order-** This is the section where we need to order new foods. In order to select a food at first the table must be selected where the food will be placed. After adding the food to cart we can then increase or decrease our food amount and the total price.\
+**5)New Order-** This is the section where we need to order new foods. In order to select a food at first the table must be selected where the food will be placed. After adding the food to cart we can then increase or decrease our food amount and the total price.
 
 **6)Orders-** Here, the admin can view all of the orders and update their statuses, including pending, paid, served, ready to be served, confirmed, and preparing.
 
 **Therefore, the entire project includes CRUD operations with authentication.**
+
+## Frameworks Used
+
+**Frontend-** Angular, Bootstrap \
+**Backend-** ASP.NET Web Api (7)\
+**Database-** SQL Server
+
+
 ## Screenshots
 Login Screen\
 ![Screenshot (6)](https://github.com/Shafin960/BSS-Restaurant/assets/72936822/0b5682ed-a02d-4091-9203-1c54b5c08236)
@@ -72,8 +87,4 @@ Full Application is responsive\
 ![Screenshot (23)](https://github.com/Shafin960/BSS-Restaurant/assets/72936822/aefb6d85-0d5c-4781-b735-72dfc8e93465)
 ![Screenshot (25)](https://github.com/Shafin960/BSS-Restaurant/assets/72936822/92fde9e7-3a60-4b88-8527-1e4d239ed8df)
 
-## Frameworks Used
 
-**Frontend-** Angular, Bootstrap \
-**Backend-** ASP.NET Web Api (7)\
-**Database-** SQL Server

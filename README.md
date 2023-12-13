@@ -1,27 +1,37 @@
-# BSSRestaurant
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+# Restaurant-Management-App
 
-## Development server
+It's an Angular and ASP.NET WEB API-built restaurant management web application with a SQL Server management database. The main challenge and functionalities here are employee management, table management, food management and order management. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Admin Credentials
+Username: admin@mail.com \
+Password: Admin@123
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install Restaurant-Management-App with npm
 
-## Build
+```bash
+  npm install 
+  npm install -g @angular/cli
+  ng serve --open
+```
+    
+## Features Of The Project
+**1)Login-** The user will be able to view and modify all admin-side operations after logging in as an admin. \
+**2)Employee-** This page contains a list of all the employees, and the admin can add or remove any employee by clicking the add employee button, which requires the addition of the necessary information. \
+**3)Tables-** If the admin so chooses, he can also remove or add new tables. Another important feature is that the administrator has the ability to add and remove employees from a certain table. \
+**4)Foods-** This is very similar to the employees list. Admin can add and remove foods in this section. \
+**5)New Order-** This is the section where we need to order new foods. In order to select a food at first the table must be selected where the food will be placed. After adding the food to cart we can then increase or decrease our food amount and the total price.\
+**6)Orders-** Here, the admin can view all of the orders and update their statuses, including pending, paid, served, ready to be served, confirmed, and preparing.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Therefore, the entire project includes CRUD operations with authentication.**
+## Screenshots
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Frameworks Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Frontend-** Angular, Bootstrap \
+**Backend-** ASP.NET Web Api (7)\
+**Database-** SQL Server

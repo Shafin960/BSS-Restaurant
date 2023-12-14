@@ -28,6 +28,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-employee.component';
 import { MobileNavbarComponent } from './components/mobile-navbar/mobile-navbar.component';
 import { OrderStatusComponent } from './pages/orders/order-status/order-status.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { OrderStatusComponent } from './pages/orders/order-status/order-status.c
     OrderStatusComponent,
   ],
   imports: [
+    MatPaginatorModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,

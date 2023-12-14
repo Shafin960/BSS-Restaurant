@@ -54,7 +54,10 @@
             </table>
         </div>
         <div class="table-footer">
-            <div style="margin-right: 4px;">
+            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)"
+                showFirstLastButtons>
+            </mat-paginator>
+            <!-- <div style="margin-right: 4px;">
                 <label for="page">Items per Page:</label>
                 <select id="page" class="border bottom-1 ng-untouched ng-pristine ng-valid">
                     <option value="10">10</option>
@@ -62,7 +65,8 @@
                     <option value="20">20</option>
                 </select>
             </div>
-            <div>1-{{foods.length}} of {{foods.length}}</div>
+
+            <div>1-{{foods.length}} of {{foods.length}}</div> -->
         </div>
     </div>
 

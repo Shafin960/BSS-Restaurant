@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetFood } from 'src/app/models/getFood';
 import { baseUrl } from 'src/app/environments/environment';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-foods',
@@ -12,7 +13,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./foods.component.css'],
 })
 export class FoodsComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   foods: GetFood[] = [];
+  displayedItems: GetFood[] = [];
   isLoading = false;
   constructor(
     private route: Router,
@@ -22,6 +25,17 @@ export class FoodsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFood();
+  }
+  ngAfterViewInit() {
+    // this.paginator.page.subscribe((event) => {
+    //   this.onPageChange(event);
+    // });
+  }
+  onPageChange(event: any) {
+    // this.getFood();
+    // const startIndex = event.pageIndex * event.pageSize;
+    // const endIndex = startIndex + event.pageSize;
+    // this.displayedItems = this.foods.slice(startIndex, endIndex);
   }
 
   onAddFood() {

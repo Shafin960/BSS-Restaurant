@@ -20,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="row-data-border " *ngFor="let food of foods">
+                    <tr class="row-data-border " *ngFor="let food of displayedItems">
                         <td class=" p-3 "><img src="{{food.image}}"
                                 style="height: 50px; width: 50px; border-radius: 50%;"> </td>
                         <td class=" p-3" style="font-size: 16px;">
@@ -54,8 +54,8 @@
             </table>
         </div>
         <div class="table-footer">
-            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)"
-                showFirstLastButtons>
+            <mat-paginator style="font-size: 15px;" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+                [length]="length" (page)="onPageChange($event)">
             </mat-paginator>
             <!-- <div style="margin-right: 4px;">
                 <label for="page">Items per Page:</label>
@@ -64,9 +64,9 @@
                     <option value="15">15</option>
                     <option value="20">20</option>
                 </select>
-            </div>
+            </div> -->
 
-            <div>1-{{foods.length}} of {{foods.length}}</div> -->
+            <!-- <div>1-{{foods.length}} of {{foods.length}}</div> -->
         </div>
     </div>
 

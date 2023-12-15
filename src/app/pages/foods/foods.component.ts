@@ -14,6 +14,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class FoodsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  length = 0;
   foods: GetFood[] = [];
   displayedItems: GetFood[] = [];
   isLoading = false;
@@ -25,17 +26,17 @@ export class FoodsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFood();
+    this.onPageChange(event);
   }
   ngAfterViewInit() {
-    // this.paginator.page.subscribe((event) => {
-    //   this.onPageChange(event);
-    // });
+    this.paginator.page.subscribe((event) => {
+      this.onPageChange(event);
+    });
   }
   onPageChange(event: any) {
-    // this.getFood();
-    // const startIndex = event.pageIndex * event.pageSize;
-    // const endIndex = startIndex + event.pageSize;
-    // this.displayedItems = this.foods.slice(startIndex, endIndex);
+    const startIndex = event.pageIndex * event.pageSize;
+    const endIndex = startIndex + event.pageSize;
+    this.displayedItems = this.foods.slice(startIndex, endIndex);
   }
 
   onAddFood() {
@@ -47,6 +48,9 @@ export class FoodsComponent implements OnInit {
     this.http.get<any[]>(`${baseUrl}Food/datatable`).subscribe((posts) => {
       console.log(posts);
       this.foods = posts;
+      this.displayedItems = this.foods;
+      this.displayedItems = this.foods.slice(0, 5);
+      this.length = this.foods.length;
       this.isLoading = false;
     });
   }

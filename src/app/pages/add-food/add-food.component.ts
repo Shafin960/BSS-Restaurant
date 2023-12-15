@@ -66,6 +66,20 @@ export class AddFoodComponent {
   ) {}
 
   onAddFood(food: Food) {
+    if (food.name == '') {
+      this.toastr.error('Food Name Required', 'Failed');
+      return;
+    }
+
+    if (food.description == '') {
+      this.toastr.error('Food Description Required', 'Failed');
+      return;
+    }
+
+    if (food.price <= 0) {
+      this.toastr.error('Price must be greater than Zero', 'Failed');
+      return;
+    }
     food.discount = this.discountInvalue;
     food.price = this.price;
     food.discountType = this.discountTypevalue;
@@ -76,20 +90,7 @@ export class AddFoodComponent {
     }
 
     food.base64 = this.imageUl;
-    if (food.name === '') {
-      this.toastr.error('Food Name Required', 'Failed');
-      return;
-    }
 
-    if (food.description === '') {
-      this.toastr.error('Food Description Required', 'Failed');
-      return;
-    }
-
-    if (food.price <= 0) {
-      this.toastr.error('Price must be greater than Zero', 'Failed');
-      return;
-    }
     this.http.post(`${baseUrl}Food/create`, food).subscribe((resonseData) => {
       console.log(food);
       this.toastr.success('Food Created', 'Operation Successful!');

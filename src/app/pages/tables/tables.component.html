@@ -60,15 +60,9 @@
             </table>
         </div>
         <div class="table-footer">
-            <div style="margin-right: 4px;">
-                <label for="page">Items per Page:</label>
-                <select id="page" class="border bottom-1 ng-untouched ng-pristine ng-valid">
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                </select>
-            </div>
-            <div>1-{{tables.length}} of {{tables.length}} </div>
+            <mat-paginator style="font-size: 15px;" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+                [length]="length" (page)="onPageChange($event)">
+            </mat-paginator>
         </div>
     </div>
     <app-assign-employee *ngIf="showAssignComp" (cancelClicked)="onCloseModal()"

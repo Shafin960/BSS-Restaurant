@@ -1,5 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
@@ -13,6 +20,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./tables.component.css'],
 })
 export class TablesComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  length = 0;
+  displayedItems: GetTable[] = [];
   tables: GetTable[] = [];
   isLoading = false;
   showAssignComp: boolean = false;
@@ -22,17 +32,34 @@ export class TablesComponent implements OnInit {
     private toastr: ToastrService,
     private assign: AssignTablesService
   ) {}
+
   ngOnInit(): void {
     this.getTable();
+    this.onPageChange(event);
   }
+
+  ngAfterViewInit() {
+    this.paginator.page.subscribe((event) => {
+      this.onPageChange(event);
+    });
+  }
+  onPageChange(event: any) {
+    const startIndex = event.pageIndex * event.pageSize;
+    const endIndex = startIndex + event.pageSize;
+    this.displayedItems = this.tables.slice(startIndex, endIndex);
+  }
+
   onAddTable() {
     this.route.navigate(['/addtable']);
   }
+
   getTable() {
     this.isLoading = true;
     this.http.get<any[]>(`${baseUrl}Table/datatable`).subscribe((posts) => {
-      console.log(posts);
       this.tables = posts;
+      this.displayedItems = this.tables;
+      this.displayedItems = this.tables.slice(0, 5);
+      this.length = this.tables.length;
       this.isLoading = false;
     });
   }

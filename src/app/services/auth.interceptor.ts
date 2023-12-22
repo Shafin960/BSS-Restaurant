@@ -7,7 +7,6 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
 import { Observable } from 'rxjs-compat';
 import { catchError, exhaustMap, take } from 'rxjs/operators';
 import { AutService } from './aut.service';

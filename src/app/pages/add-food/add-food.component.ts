@@ -76,7 +76,7 @@ export class AddFoodComponent {
       return;
     }
 
-    if (food.price <= 0) {
+    if (food.price < 0) {
       this.toastr.error('Price must be greater than Zero', 'Failed');
       return;
     }

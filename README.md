@@ -7,6 +7,10 @@ It's an Angular and ASP.NET WEB API-built restaurant management web application 
 ## Admin Credentials
 Username: admin@mail.com \
 Password: Admin@123
+
+## Live Site
+[WebSite Link] [https://bss-restaurant-hl6is34s7-mushfiques-projects.vercel.app/login]
+
 ## Installation
 
 Install Restaurant-Management-App with npm

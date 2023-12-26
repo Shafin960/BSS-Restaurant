@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { fakeAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { baseUrl } from 'src/app/environments/environment';
 import { User } from 'src/app/models/user';
 import { AutService } from 'src/app/services/aut.service';
 import Swal from 'sweetalert2';
@@ -17,11 +15,7 @@ export class LoginComponent {
   user = new User();
   isError: boolean = false;
   isLoading = false;
-  constructor(
-    private authService: AutService,
-    private route: Router,
-    private http: HttpClient
-  ) {}
+  constructor(private authService: AutService, private route: Router) {}
   ngOnInit() {
     localStorage.removeItem('authToken');
     localStorage.removeItem('user');

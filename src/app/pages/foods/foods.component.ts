@@ -5,7 +5,7 @@ import { GetFood } from 'src/app/models/getFood';
 import { baseUrl } from 'src/app/environments/environment';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-foods',

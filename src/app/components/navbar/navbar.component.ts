@@ -1,6 +1,4 @@
-import { trigger } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { GetFood } from 'src/app/models/getFood';
 import { FoodsService } from 'src/app/services/foods.service';
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
 import { GetOrderedFoodDetails } from 'src/app/models/getOrderDetails';

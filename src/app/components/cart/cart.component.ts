@@ -1,13 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import {
-  Component,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { Toast, ToastrService } from 'ngx-toastr';
-import { AppModule } from 'src/app/app.module';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
 import { GetFood } from 'src/app/models/getFood';
 import { GetTable } from 'src/app/models/getTables';

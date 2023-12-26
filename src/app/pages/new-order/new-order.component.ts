@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { baseUrl } from 'src/app/environments/environment';
 import { GetFood } from 'src/app/models/getFood';
 import { GetTable } from 'src/app/models/getTables';
-import { AssignTablesService } from 'src/app/services/assign-tables.service';
 import { FoodsService } from 'src/app/services/foods.service';
 import { GettableService } from 'src/app/services/gettable.service';
 

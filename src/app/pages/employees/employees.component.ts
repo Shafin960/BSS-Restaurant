@@ -3,7 +3,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { baseUrl } from 'src/app/environments/environment';
 import { GetEmployee } from 'src/app/models/getEmployee';
-import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { MatPaginator } from '@angular/material/paginator';

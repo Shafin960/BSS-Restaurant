@@ -19,7 +19,7 @@ export class AddTableComponent {
     private toastr: ToastrService
   ) {}
 
-  imageUl: string | ArrayBuffer | null = '../../../assets/table.png';
+  imageUl: string | ArrayBuffer | null = '../../../assets/blank-profile.png';
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     const file = input.files?.[0];

@@ -12,7 +12,7 @@ import { Food } from 'src/app/models/food';
 })
 export class AddFoodComponent {
   food = new Food();
-  imageUl: string | ArrayBuffer | null = '../../../assets/newfood.png';
+  imageUl: string | ArrayBuffer | null = '../../../assets/blank-profile.png';
 
   price = 0;
   discountType = '';

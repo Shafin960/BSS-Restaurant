@@ -79,3 +79,9 @@
 .scrool::-webkit-scrollbar-thumb:hover {
     background-color: #cc080b;
 }
+
+@media (max-width: 700px) {
+    .new-order {
+        padding: 0.5rem;
+    }
+}

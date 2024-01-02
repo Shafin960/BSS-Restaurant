@@ -75,3 +75,9 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
+
+@media (max-width: 700px) {
+  .add-employee {
+    padding: 0.5rem;
+  }
+}

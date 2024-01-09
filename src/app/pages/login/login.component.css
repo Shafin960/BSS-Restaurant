@@ -157,6 +157,7 @@ img {
 .link {
   color: #cc080b;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .login-form {

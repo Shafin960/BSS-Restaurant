@@ -15,11 +15,16 @@ export class LoginComponent {
   user = new User();
   isError: boolean = false;
   isLoading = false;
+  isQR = false;
   constructor(private authService: AutService, private route: Router) {}
   ngOnInit() {
     localStorage.removeItem('authToken');
     localStorage.removeItem('user');
   }
+  toggleQR() {
+    this.isQR = !this.isQR;
+  }
+
   onLogin(user: User) {
     this.isLoading = true;
     this.authService.login(user).subscribe(

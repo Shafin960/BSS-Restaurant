@@ -8,6 +8,9 @@ import { GetTable } from 'src/app/models/getTables';
 import { AssignTablesService } from 'src/app/services/assign-tables.service';
 import Swal from 'sweetalert2';
 
+declare function loadin(): any;
+declare function leaving(): any;
+
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
@@ -44,6 +47,7 @@ export class TablesComponent implements OnInit {
   }
 
   onAddTable() {
+    leaving();
     this.route.navigate(['/addtable']);
   }
 
@@ -55,6 +59,7 @@ export class TablesComponent implements OnInit {
       this.displayedItems = this.tables.slice(0, 5);
       this.length = this.tables.length;
       this.isLoading = false;
+      loadin();
     });
   }
   onDeleteTable(id: number) {

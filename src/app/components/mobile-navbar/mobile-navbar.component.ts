@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { IMenu } from 'src/app/models/Menu';
 import { AutService } from 'src/app/services/aut.service';
 
+declare function leaving(): any;
+
 @Component({
   selector: 'app-mobile-navbar',
   templateUrl: './mobile-navbar.component.html',
@@ -47,6 +49,9 @@ export class MobileNavbarComponent implements OnInit {
       icon: 'list',
     },
   ];
+  left() {
+    leaving();
+  }
 
   onLogout() {
     this.route.navigate(['/login']);

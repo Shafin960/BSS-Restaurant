@@ -16,7 +16,7 @@
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item" *ngFor="let menu of menus">
                 <a [routerLink]="menu.link" routerLinkActive="active-link" class="nav-link m-1 d-flex"
-                    aria-current="page" id="linkcolor">
+                    aria-current="page" id="linkcolor" (click)="left()">
                     <mat-icon>
                         <span class="material-symbols-outlined">
                             {{menu.icon}}

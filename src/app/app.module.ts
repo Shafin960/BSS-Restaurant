@@ -29,6 +29,7 @@ import { AssignEmployeeComponent } from './pages/tables/assign-employee/assign-e
 import { MobileNavbarComponent } from './components/mobile-navbar/mobile-navbar.component';
 import { OrderStatusComponent } from './pages/orders/order-status/order-status.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { QrComponent } from './components/qr/qr.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AssignEmployeeComponent,
     MobileNavbarComponent,
     OrderStatusComponent,
+    QrComponent,
   ],
   imports: [
     MatPaginatorModule,

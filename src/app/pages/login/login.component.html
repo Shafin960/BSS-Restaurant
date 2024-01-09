@@ -23,7 +23,7 @@
                                 class="input-field" [(ngModel)]="user.password">
                         </div>
                         <button type="submit" class="submitbtn mt-3 mb-3" (click)="onLogin(user)">Log in</button>
-                        <p class="link">Back To Home</p>
+                        <p class="link" (click)="toggleQR()">Back To Home</p>
                     </form>
                 </div>
             </div>
@@ -31,3 +31,5 @@
 
     </div>
 </div>
+
+<app-qr *ngIf="isQR" (close)="toggleQR()"></app-qr>
